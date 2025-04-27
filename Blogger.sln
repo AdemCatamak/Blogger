@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blogger", "Blogger\Blogger.csproj", "{3BF102F6-4BF6-48C4-AB84-18B99EC5E4C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blogger.Domain", "Blogger.Domain\Blogger.Domain.csproj", "{78EDF6A5-72F8-49BD-8922-91505AD36D5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blogger.Application", "Blogger.Application\Blogger.Application.csproj", "{E01B051E-EAE9-4A39-AA94-8195D23A1F6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blogger.Infra", "Blogger.Infra\Blogger.Infra.csproj", "{C819C44D-DF02-4F48-828D-B2E61AB24277}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder", "SolutionFolder", "{3A99BA21-41DE-44B4-9124-C774286CBB73}"
+ProjectSection(SolutionItems) = preProject
+	Directory.Build.props = Directory.Build.props
+	docker-compose.yml = docker-compose.yml
+EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BF102F6-4BF6-48C4-AB84-18B99EC5E4C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BF102F6-4BF6-48C4-AB84-18B99EC5E4C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BF102F6-4BF6-48C4-AB84-18B99EC5E4C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BF102F6-4BF6-48C4-AB84-18B99EC5E4C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78EDF6A5-72F8-49BD-8922-91505AD36D5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78EDF6A5-72F8-49BD-8922-91505AD36D5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78EDF6A5-72F8-49BD-8922-91505AD36D5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78EDF6A5-72F8-49BD-8922-91505AD36D5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E01B051E-EAE9-4A39-AA94-8195D23A1F6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E01B051E-EAE9-4A39-AA94-8195D23A1F6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E01B051E-EAE9-4A39-AA94-8195D23A1F6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E01B051E-EAE9-4A39-AA94-8195D23A1F6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C819C44D-DF02-4F48-828D-B2E61AB24277}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C819C44D-DF02-4F48-828D-B2E61AB24277}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C819C44D-DF02-4F48-828D-B2E61AB24277}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C819C44D-DF02-4F48-828D-B2E61AB24277}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
