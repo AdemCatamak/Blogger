@@ -1,8 +1,11 @@
 using System;
 using System.Linq;
 using Blogger.Domain;
+using Blogger.GraphQLSection;
 using Blogger.Infra;
 using Blogger.Infra.Db;
+using GraphQL.Instrumentation;
+using GraphQL.Server;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -26,6 +29,13 @@ namespace Blogger
         {
             services.AddControllers();
 
+            services.AddSingleton<IFieldMiddleware, Blogger.GraphQLSection.Middleware.ExceptionHandlerMiddleware>();
+            services.AddScoped<BloggerSchema>();
+            services.AddGraphQL()
+                    .AddSystemTextJson()
+                    .AddGraphTypes(ServiceLifetime.Scoped)
+                    .AddDataLoader();
+
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "Blogger", Version = "v1"}); });
 
             services.AddBloggerDependencies(Configuration);
@@ -34,11 +44,15 @@ namespace Blogger
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, BloggerDbContext bloggerDbContext)
         {
+            app.UseGraphQL<BloggerSchema>();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Blogger"));
+
+                app.UseGraphQLPlayground();
             }
 
             app.UseMiddleware<Blogger.Controllers.Middleware.ExceptionHandlerMiddleware>();
