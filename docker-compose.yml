@@ -1,12 +1,10 @@
-version: "3.4"
-
 services:
 
   blogger-sql-server:
-    image: mcr.microsoft.com/mssql/server:2017-CU14-ubuntu
+    image: mcr.microsoft.com/mssql/server:2022-latest
     environment:
       ACCEPT_EULA: "Y"
       SA_PASSWORD: "Passw0rd"
     ports:
-      - 14313:1433
+      - "1433:1433"
   
